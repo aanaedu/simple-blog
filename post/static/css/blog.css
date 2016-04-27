@@ -1,0 +1,5 @@
+.site-title > h1> a{
+	text-transform: uppercase;
+	color: #ff9400;
+	text-decoration: none;
+}

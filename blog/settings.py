@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC+01'
+TIME_ZONE = 'Nigeria/Lagos'
 
 USE_I18N = True
 

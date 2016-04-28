@@ -1,5 +1,22 @@
-.site-title > h1> a{
-	text-transform: uppercase;
+.top-menu { 
+	font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.top-menu .nav li a {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.top-menu .navbar-brand {
+    font-weight: 800;
+    text-transform: uppercase;
 	color: #ff9400;
 	text-decoration: none;
+}
+.top-menu .navbar-brand:hover{
+	color: #ff9400;
+}
+
+.content{
+	margin-top: 50px;
 }

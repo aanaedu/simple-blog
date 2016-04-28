@@ -4,7 +4,9 @@
     {% for post in posts %}
     	<div class="post-preview">
 		<h2 class="post-title"><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
-		<p class="post-meta">Created: {{post.created_at|date: 'd-m-Y'}}</p>
+		{% if post.created_at %}
+		<p class="post-meta">Created: {{post.created_at|date:'d-m-Y'}}</p>
+		{% endif %}
 		<p class="">{{ post.text|linebreaks|truncatechars:200 }}</p>
 	</div>
 	<hr>

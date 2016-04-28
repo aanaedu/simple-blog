@@ -39,5 +39,5 @@ def post_edit(req, pk):
 	return render(req, 'post/post_edit.html', {'form': form})
 
 def post_draft_list(req):
-	posts = Post.objects.filter(published_at__isnull=True).order_by('created_date')
-	return render(request, 'post/post_draft_list.html', {'posts': posts})
+	posts = Post.objects.filter(published_at__isnull=True).order_by('created_at')
+	return render(req, 'post/post_draft_list.html', {'posts': posts})

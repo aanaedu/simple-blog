@@ -7,7 +7,9 @@
     			<div class="post-heading">
     				<h1>{{ post.title }}</h1>
     				{% if post.published_at %}
-    				<span class="meta">{{post.published_at}}</span>
+    				    <span class="meta">{{post.published_at}}</span>
+                    {% else %}
+                        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
     				{% endif %}
                     <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
     			</div>

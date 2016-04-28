@@ -41,3 +41,8 @@ def post_edit(req, pk):
 def post_draft_list(req):
 	posts = Post.objects.filter(published_at__isnull=True).order_by('created_at')
 	return render(req, 'post/post_draft_list.html', {'posts': posts})
+
+def post_publish(req, pk):
+	post = get_object_or_404(Post, pk=pk)
+	post.publish()
+	return redirect('post.views.post_detail', pk=pk)

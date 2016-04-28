@@ -41,7 +41,10 @@
                 <ul class="nav navbar-nav navbar-right">
                 	{% if user.is_authenticated %}
                     <li>
-                        <a href="{% url 'post_new' %}">New<span class="glyphicon glyphicon-plus"></span></a>
+                        <a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'post_draft_list' %}">New<span class="glyphicon glyphicon-edit"></span></a>
                     </li>
                     {% endif %}
                     <li>

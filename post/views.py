@@ -4,7 +4,7 @@ from .models import Post
 from .forms import PostForm
 
 def post_list(request):
-	posts = Post.objects.filter(published_at__lte=timezone.now()).order_by('published_at')
+	posts = Post.objects.filter(published_at__lte=timezone.now()).order_by('-published_at')
 	return render(request, 'post/post_list.html', {'posts': posts})
 
 def post_detail(req, pk):
@@ -23,4 +23,18 @@ def post_new(req):
 	else:
 		form = PostForm()
 
+	return render(req, 'post/post_edit.html', {'form': form})
+
+def post_edit(req, pk):
+	post = get_object_or_404(Post, pk=pk)
+	if req.method == "POST":
+		form = PostForm(req.POST, instance=post)
+		if form.is_valid():
+			post = form.save(commit=False)
+			post.author = req.user
+			post.published_at = timezone.now()
+			post.save()
+			return redirect('post_detail', pk=post.pk)
+	else:
+		form = PostForm(instance=post)
 	return render(req, 'post/post_edit.html', {'form': form})

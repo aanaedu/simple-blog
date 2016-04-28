@@ -9,6 +9,7 @@
     				{% if post.published_at %}
     				<span class="meta">{{post.published_at}}</span>
     				{% endif %}
+                    <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
     			</div>
     		</div>			
     	</div>
